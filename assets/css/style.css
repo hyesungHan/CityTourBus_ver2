@@ -125,7 +125,7 @@ li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  overflow-x: auto;
+  overflow-x: hidden;
   border-radius: 35px 35px 0 0;
 }
 
