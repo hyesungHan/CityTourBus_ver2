@@ -17,26 +17,30 @@ function specialSlider(){
     specialImgNum = showValue;
 }
 
-function stopspecialSlider(){
+function stopSpecialSlider(){
     clearInterval(specialTimer);
     specialTimer = null ;
 }
 
 $('.special .icon').click(function (){
-    stopspecialSlider();
+    stopSpecialSlider();
     let showValue = $(this).index();
     specialImgNum = showValue-1;
     specialSlider();
     specialTimer = setInterval( specialSlider, 3000);
 });
 
+
+// 반응형
+let sliderSpecial = $(this).width();
+
+if (sliderSpecial <= 1024) specialShowHide();
+
 $(window).on('resize', function (){
-    let sliderspecial = $(this).width();
-    
-    if (sliderspecial > 1024) {
-        location.reload();
-        stopspecialSlider();
-    } else if (sliderspecial <= 1024) {
+    if (sliderSpecial <= 1024) {
         specialShowHide();
+    } else {
+        location.reload();
+        stopSpecialSlider();
     }
 })

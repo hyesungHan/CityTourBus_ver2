@@ -30,13 +30,16 @@ $('.tour .icon').click(function (){
     tourTimer = setInterval( tourSlider, 3000);
 });
 
-$(window).on('resize', function (){
-    let sliderTour = $(this).width();
-    
-    if (sliderTour > 1024) {
+// 반응형
+let sliderTour = $(this).width();
+
+if (sliderTour <= 1024) tourShowHide();
+
+$(window).on('resize', function (){    
+    if (sliderTour <= 1024) {
+        tourShowHide();
+    } else {
         location.reload();
         stopTourSlider();
-    } else if (sliderTour <= 1024) {
-        tourShowHide();
     }
 })
