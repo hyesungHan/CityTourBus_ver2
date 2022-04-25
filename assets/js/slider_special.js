@@ -32,15 +32,25 @@ $('.special .icon').click(function (){
 
 
 // 반응형
-let sliderSpecial = $(this).width();
+let sliderSpecial = window.innerWidth;
 
-if (sliderSpecial <= 1024) specialShowHide();
+if (sliderSpecial <= 1024)  specialShowHide();
 
-$(window).on('resize', function (){
-    if (sliderSpecial <= 1024) {
-        specialShowHide();
-    } else {
+$(window).on('resize', function(){
+    let specialWidth = window.innerWidth;
+    if (specialWidth > 1024) {
         location.reload();
         stopSpecialSlider();
+    } else {
+        specialShowHide();
     }
 })
+// $(window).on('resize', function (){
+//     if (sliderSpecial <= 1024) {
+//         specialShowHide();
+//     } else {
+//         location.reload();
+//         stopSpecialSlider();
+//         $('.special .image-item').show();
+//     }
+// })

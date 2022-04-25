@@ -31,15 +31,15 @@ $('.tour .icon').click(function (){
 });
 
 // 반응형
-let sliderTour = $(this).width();
-
+let sliderTour = window.innerWidth;
 if (sliderTour <= 1024) tourShowHide();
 
-$(window).on('resize', function (){    
-    if (sliderTour <= 1024) {
-        tourShowHide();
-    } else {
+$(window).on('resize', function (){
+    let tourWidth = window.innerWidth;
+    if (tourWidth > 1024) {
         location.reload();
         stopTourSlider();
+    } else {
+        tourShowHide();
     }
 })
