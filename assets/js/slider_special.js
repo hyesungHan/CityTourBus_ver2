@@ -33,7 +33,6 @@ $('.special .icon').click(function (){
 
 // 반응형
 let sliderSpecial = window.innerWidth;
-
 if (sliderSpecial <= 1024)  specialShowHide();
 
 $(window).on('resize', function(){
@@ -45,12 +44,3 @@ $(window).on('resize', function(){
         specialShowHide();
     }
 })
-// $(window).on('resize', function (){
-//     if (sliderSpecial <= 1024) {
-//         specialShowHide();
-//     } else {
-//         location.reload();
-//         stopSpecialSlider();
-//         $('.special .image-item').show();
-//     }
-// })
