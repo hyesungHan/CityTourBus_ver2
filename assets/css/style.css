@@ -57,6 +57,248 @@ li {
   background-image: url(../images/img_special04.jpg);
 }
 
+@media screen and (min-width: 1025px) {
+  .bus-content {
+    background-image: url(../images/bus_station_blue.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.contents-bottom {
+  display: block;
+}
+
+.contents-bottom .bus-group {
+  display: none;
+}
+
+.contents-bottom .bus-stop-group {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.contents-bottom .bus-stop-group .bus-content {
+  flex-shrink: 0;
+  width: 80%;
+}
+
+.contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature {
+  display: flex;
+  flex-direction: column;
+}
+
+.contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item {
+  font-weight: 600;
+}
+
+.contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul {
+  padding-left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul li {
+  margin-right: 5px;
+}
+
+.contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul li:last-child {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 744px) and (max-width: 1024px) {
+  .contents-bottom {
+    display: none;
+  }
+  .contents-bottom .bus-group {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .contents-bottom {
+    position: relative;
+    padding: 50px 0 60px;
+    margin: auto;
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    gap: 6%;
+    background: linear-gradient(90deg, darkgray 40.5%, white 40.5%);
+    z-index: -2;
+  }
+  .contents-bottom .bus-group {
+    display: block;
+    position: sticky;
+    top: 45px;
+    height: 100%;
+  }
+  .contents-bottom .bus-group .bus-outline {
+    position: relative;
+    padding: 20px 0 30px;
+    width: 345px;
+    border-radius: 20px;
+    background: linear-gradient(#fbfaf1 50%, #b72834 50%);
+  }
+  .contents-bottom .bus-group .bus-outline::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    display: block;
+    width: 30%;
+    height: 60px;
+    background: linear-gradient(#fbfaf1 35%, #b72834 35%);
+    border-radius: 20px;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-top-box,
+  .contents-bottom .bus-group .bus-outline .bus-middle-box,
+  .contents-bottom .bus-group .bus-outline .bus-lights {
+    margin: auto;
+    width: 93%;
+    border-radius: 10px;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-top-box {
+    text-align: center;
+    background-color: white;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-top-box .title {
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box {
+    position: relative;
+    margin: 20px auto 40px;
+    padding-left: 15px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: white;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list .feature-item {
+    font-size: 18px;
+    opacity: 0.6;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list .feature-item.is-active {
+    font-weight: 700;
+    opacity: 1;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .bus-driver {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    width: 100px;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-lights {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-lights .bus-light {
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background-color: #fbfb99;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-tires {
+    display: flex;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-tires .bus-tire {
+    position: absolute;
+    bottom: -55px;
+    width: 75px;
+    height: 100px;
+    border-radius: 25px;
+    background-color: black;
+    z-index: -1;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-tires .bus-tire.left {
+    left: 35px;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-tires .bus-tire.right {
+    right: 35px;
+  }
+  .contents-bottom .bus-stop-group {
+    padding-top: 100px;
+    width: 60%;
+    max-width: 600px;
+    flex-direction: column;
+    align-items: center;
+    gap: 250px;
+    overflow-x: hidden;
+  }
+  .contents-bottom .bus-stop-group .bus-content {
+    position: relative;
+    width: 100%;
+    height: 610px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .txt {
+    position: absolute;
+    top: 160px;
+    left: 30px;
+    padding: 45px 0;
+    width: 90%;
+    background-color: #fbfaf1;
+    z-index: -1;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature {
+    margin-left: 65px;
+    width: 80%;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item {
+    width: 32%;
+    font-weight: 600;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul {
+    display: block;
+    padding-left: 40px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul li {
+    list-style-type: square;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .service,
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .citybus,
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .qna {
+    margin-left: 80px;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .service .feature-item,
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .citybus .feature-item,
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .qna .feature-item {
+    width: 100%;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .service .feature-item ul,
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .citybus .feature-item ul,
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .qna .feature-item ul {
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .service .feature-item ul li,
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .citybus .feature-item ul li,
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .qna .feature-item ul li {
+    margin-left: 30px;
+  }
+}
+
 .contents-middle {
   min-width: 320px;
   display: flex;

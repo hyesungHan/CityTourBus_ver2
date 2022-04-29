@@ -29,3 +29,10 @@
 #special04{
     background-image: url(../images/img_special04.jpg);
 }
+@media screen and (min-width:1025px){
+    .bus-content{
+        background-image: url(../images/bus_station_blue.svg);
+        background-repeat:no-repeat;
+        background-size:cover;
+    }
+}
