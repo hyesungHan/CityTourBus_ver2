@@ -4,6 +4,10 @@
   display: none;
 }
 
+input {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -57,30 +61,51 @@ li {
   background-image: url(../images/img_special04.jpg);
 }
 
-@media screen and (min-width: 1025px) {
-  .bus-content {
+@media screen and (min-width: 744px) {
+  .bus-feature-group {
     background-image: url(../images/bus_station_blue.svg);
     background-repeat: no-repeat;
     background-size: cover;
   }
 }
 
-.contents-bottom {
+.contents-bottom .bus-group {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.contents-bottom .bus-group .bus-outline .bus-top-box .title {
+  text-align: center;
+  font-weight: 600;
+}
+
+.contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list .feature-item {
+  font-size: 12px;
+}
+
+.contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list .feature-item:nth-child(2n+1) {
+  margin-right: 25px;
+}
+
+.contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list label {
+  cursor: pointer;
   display: block;
 }
 
-.contents-bottom .bus-group {
+.contents-bottom .bus-group .bus-outline .bus-middle-box .bus-driver {
   display: none;
 }
 
-.contents-bottom .bus-stop-group {
-  display: flex;
-  overflow-x: scroll;
-}
-
-.contents-bottom .bus-stop-group .bus-content {
-  flex-shrink: 0;
-  width: 80%;
+.contents-bottom .bus-stop-group .bus-content .bus-feature-group {
+  width: 100%;
 }
 
 .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature {
@@ -89,31 +114,164 @@ li {
 }
 
 .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item {
+  font-size: 12px;
   font-weight: 600;
 }
 
+.contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item.is-active {
+  font-weight: 700;
+  opacity: 1;
+}
+
 .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul {
-  padding-left: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 14px;
   font-weight: 400;
 }
 
 .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul li {
-  margin-right: 5px;
+  margin-left: 5px;
 }
 
-.contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul li:last-child {
-  margin-right: 0;
+.contents-bottom .bus-stop-group .bus-content .bus-feature-group .place .feature-item ul,
+.contents-bottom .bus-stop-group .bus-content .bus-feature-group .service .feature-item ul {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media screen and (min-width: 744px) and (max-width: 1024px) {
   .contents-bottom {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
   }
   .contents-bottom .bus-group {
+    position: static;
+    background-color: transparent;
+  }
+  .contents-bottom .bus-group .bus-outline {
+    padding: 0;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-top-box .title {
+    margin-bottom: 20px;
+    font-size: 26px;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list {
+    position: relative;
+    margin: auto;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 25px;
+    width: 500px;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    display: block;
+    width: 600px;
+    height: 48px;
+    background-color: white;
+    border: 26px solid gray;
+    border-radius: 45px 30px;
+    z-index: -1;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    display: block;
+    width: 740px;
+    height: 26px;
+    background-color: gray;
+    transform: translateY(-50%);
+    z-index: -2;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list .feature-item {
+    font-size: 18px;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list .feature-item .label {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list .feature-item .label .label-icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #e1dec8;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list .feature-item .input-radio + .label .label-icon {
+    border-radius: 100%;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list .feature-item .input-radio:checked + .label {
+    font-weight: 700;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list .feature-item .input-radio:checked + .label .label-icon {
+    background-color: #b72834;
+    border: none;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-middle-box .bus-driver {
     display: none;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-lights {
+    display: none;
+    justify-content: space-between;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-lights .bus-light {
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background-color: #fbfb99;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-tires {
+    display: none;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-tires .bus-tire {
+    position: absolute;
+    bottom: -55px;
+    width: 75px;
+    height: 100px;
+    border-radius: 25px;
+    background-color: black;
+    z-index: -1;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-tires .bus-tire.left {
+    left: 35px;
+  }
+  .contents-bottom .bus-group .bus-outline .bus-tires .bus-tire.right {
+    right: 35px;
+  }
+  .contents-bottom .bus-stop-group .bus-content {
+    display: none;
+  }
+  .contents-bottom .bus-stop-group .bus-content:nth-child(1) {
+    display: block;
+  }
+  .contents-bottom .bus-stop-group .bus-content.checked {
+    display: block;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group {
+    margin: auto;
+    position: relative;
+    max-width: 740px;
+    height: 750px;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .txt {
+    position: absolute;
+    top: 200px;
+    left: 130px;
+    width: 500px;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item {
+    font-size: 16px;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul {
+    font-weight: 400;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul li {
+    margin-left: 15px;
   }
 }
 
@@ -126,7 +284,6 @@ li {
     display: flex;
     justify-content: center;
     gap: 6%;
-    background: linear-gradient(90deg, darkgray 40.5%, white 40.5%);
     z-index: -2;
   }
   .contents-bottom .bus-group {
@@ -183,6 +340,7 @@ li {
   .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list {
     display: flex;
     flex-direction: column;
+    align-items: baseline;
     gap: 10px;
   }
   .contents-bottom .bus-group .bus-outline .bus-middle-box .feature-list .feature-item {
@@ -197,6 +355,7 @@ li {
     position: absolute;
     right: 10px;
     bottom: 0;
+    display: block;
     width: 100px;
   }
   .contents-bottom .bus-group .bus-outline .bus-lights {
@@ -228,48 +387,69 @@ li {
     right: 35px;
   }
   .contents-bottom .bus-stop-group {
-    padding-top: 100px;
     width: 60%;
     max-width: 600px;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 250px;
     overflow-x: hidden;
   }
   .contents-bottom .bus-stop-group .bus-content {
+    padding-top: 200px;
     position: relative;
     width: 100%;
-    height: 610px;
     display: flex;
     align-items: flex-end;
   }
+  .contents-bottom .bus-stop-group .bus-content:first-child {
+    padding-top: 100px;
+  }
+  .contents-bottom .bus-stop-group .bus-content:first-child .bus-feature-group .txt {
+    top: 260px;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group {
+    width: 100%;
+    height: 610px;
+  }
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .txt {
     position: absolute;
-    top: 160px;
-    left: 30px;
+    top: 360px;
+    left: 25px;
     padding: 45px 0;
-    width: 90%;
+    width: 88%;
     background-color: #fbfaf1;
     z-index: -1;
   }
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature {
     margin-left: 65px;
-    width: 80%;
-    flex-direction: row;
+    width: 85%;
     justify-content: flex-start;
   }
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item {
     width: 32%;
     font-weight: 600;
+    font-size: 16px;
   }
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul {
     display: block;
     padding-left: 40px;
-    font-size: 14px;
     font-weight: 400;
   }
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .feature .feature-item ul li {
+    margin-left: 0;
     list-style-type: square;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .place {
+    flex-direction: row;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .place .feature-item {
+    width: 35%;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .place .feature-item:first-child {
+    width: 27.5%;
+  }
+  .contents-bottom .bus-stop-group .bus-content .bus-feature-group .service {
+    width: 80%;
   }
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .service,
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .citybus,
@@ -286,7 +466,7 @@ li {
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .service .feature-item ul,
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .citybus .feature-item ul,
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .qna .feature-item ul {
-    padding-left: 10px;
+    padding-left: 8px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -295,7 +475,8 @@ li {
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .service .feature-item ul li,
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .citybus .feature-item ul li,
   .contents-bottom .bus-stop-group .bus-content .bus-feature-group .qna .feature-item ul li {
-    margin-left: 30px;
+    margin-left: 15px;
+    margin-right: 10px;
   }
 }
 

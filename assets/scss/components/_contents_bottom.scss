@@ -1,48 +1,236 @@
 .contents-bottom{
-    display:block;
     .bus-group{
-        display:none;
+        position:sticky;
+        top:0;
+        // height:70px;
+        background-color: white;
+        .bus-outline{
+            .bus-top-box{
+                .title{
+                    text-align: center;
+                    font-weight: 600;
+                }
+            }
+            .bus-middle-box{
+                .feature-list{
+                    display:flex;
+                    flex-wrap:wrap;
+                    justify-content: center;
+                    align-items: center;
+                    .feature-item{
+                        font-size: 12px;
+                        &:nth-child(2n+1){
+                            margin-right:25px;
+                        }
+                    }
+                    label{
+                        cursor: pointer;
+                        display:block;
+                    }
+                }
+                .bus-driver{
+                    display:none;
+                }
+            }
+        }
     }
     .bus-stop-group{
-        display:flex;
-        overflow-x:scroll;
         .bus-content{
-            flex-shrink: 0;
-            width:80%;
-           .bus-feature-group{
-               .txt{
+            .bus-feature-group{
+                width:100%;
 
-               }
+                .txt{
 
-               .feature{
-                   display:flex;
-                   flex-direction: column;
+                }
+                .feature{
+                    display:flex;
+                    flex-direction: column;
                     .feature-item{
+                        font-size: 12px;
                         font-weight: 600;
-                            ul{
-                                padding-left:15px;
-                                display:flex;
-                                flex-wrap: wrap;
-                                font-size: 14px;
-                                font-weight: 400;
-                                li{
-                                    margin-right:5px;
-                                    &:last-child{
-                                        margin-right:0;
-                                    }
-                                }
+                        
+                        &.is-active{
+                            font-weight: 700;
+                            opacity:1;
+                        }
+
+                        ul{
+                            font-weight: 400;
+                            li{
+                                margin-left:5px;
                             }
+                        }
                     }
-               }
-           }
+                }
+
+                .place,
+                .service{
+                    .feature-item{
+                        ul{
+                            display:flex;
+                            flex-wrap: wrap;
+                        }
+                    }
+                }
+
+            }           
         }
     }
 }
 @media screen and (min-width:744px) and (max-width:1024px){
     .contents-bottom{
-        display:none;
+        display:flex;
+        flex-direction: column;
+        gap:50px;
         .bus-group{
-            display:none;
+            position:static;
+            background-color: transparent;
+            .bus-outline{
+                padding:0;
+                .bus-top-box{
+                    .title{
+                        margin-bottom:20px;
+                        font-size: 26px;
+                    }
+                }
+                .bus-middle-box{
+                    .feature-list{
+                        position: relative;
+                        margin:auto;
+                        flex-direction: row;
+                        align-items:flex-start;
+                        gap:25px;
+                        width:500px;
+                        &::before{
+                            content:'';
+                            position: absolute;
+                            top:-3px;
+                            display:block;
+                            width:600px;
+                            height:48px;
+                            background-color: white;
+                            border:26px solid gray;
+                            border-radius: 45px 30px;
+                            z-index:-1;
+                        }
+                        &::after{
+                            content:'';
+                            position:absolute;
+                            top:40%;
+                            display:block;
+                            width:740px;
+                            height:26px;
+                            background-color: gray;
+                            transform:translateY(-50%);
+                            z-index:-2;
+                        }
+                        .feature-item{
+                            font-size: 18px;
+
+                            .label{
+                                margin-left:15px;
+                                display:flex;
+                                flex-direction:column-reverse;
+                                align-items:flex-start;
+                                gap:5px;
+                                
+                                .label-txt{
+                                //   padding-right:8px;
+                                }
+                                .label-icon{
+                                  display:inline-flex;
+                                  flex-shrink:0;
+                                  width:20px;
+                                  height:20px;
+                                  background-color:$color-02;
+                                }
+                            }
+
+                            .input-radio{
+                                & + .label .label-icon{
+                                  border-radius:100%;
+                                }
+                                &:checked + .label{
+                                  font-weight:700;
+                                }
+                                &:checked + .label .label-icon{
+                                  background-color:$color-04;
+                                  border: none;
+                                }
+                            }
+                            
+                        }
+                    }
+                    .bus-driver{
+                        display:none;
+                    }
+                }
+                .bus-lights{
+                    display:none;
+                    justify-content: space-between;
+                    .bus-light{
+                        width:55px;
+                        height:55px;
+                        border-radius:100%;
+                        background-color:rgb(251, 251, 153);
+                    }
+                }
+                .bus-tires{
+                    display:none;
+                    .bus-tire{
+                        position: absolute;
+                        bottom:-55px;
+                        width:75px;
+                        height:100px;
+                        border-radius: 25px;
+                        background-color: black;
+                        z-index:-1;
+
+                        &.left{
+                            left:35px;
+                        }
+                        &.right{
+                            right:35px;
+                        }
+                    }
+                }
+            }
+        }
+        .bus-stop-group{
+            .bus-content{
+                display:none;
+                &:nth-child(1){
+                    display:block;
+                }
+                &.checked{
+                    display:block;
+                }
+                .bus-feature-group{
+                    margin:auto;
+                    position: relative;
+                    max-width:740px;
+                    height:750px;
+                    .txt{
+                        position:absolute;
+                        top:200px;
+                        left:130px;
+                        width:500px;
+                    }
+                    .feature{
+
+                        .feature-item{
+                            font-size: 16px;                      
+    
+                            ul{
+                                font-weight: 400;
+                                li{
+                                    margin-left:15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -55,17 +243,14 @@
         display:flex;
         justify-content:center;
         gap:6%;
-        background: linear-gradient(90deg, darkgray 40.5%, white 40.5%);
+        // background: linear-gradient(90deg, darkgray 40.5%, white 40.5%);
         z-index:-2;
         .bus-group{
             display:block;
             position:sticky;
             top:45px;
             height:100%;
-            // .bus-top-box,
-            // .bus-middle-box{
-            //     border: 1px solid black;
-            // }
+
             .bus-outline{
                 position: relative;
                 padding:20px 0 30px;
@@ -115,6 +300,7 @@
                     .feature-list{
                         display:flex;
                         flex-direction: column;
+                        align-items: baseline;
                         gap:10px;
                         .feature-item{
                             font-size: 18px;
@@ -130,6 +316,7 @@
                         position: absolute;
                         right:10px;
                         bottom:0;
+                        display:block;
                         width:100px;
                     }
                 }
@@ -166,49 +353,72 @@
         }
 
         .bus-stop-group{
-            padding-top:100px;
             width:60%;
             max-width:600px;
+            display:flex;
             flex-direction: column;
             align-items: center;
-            gap:250px;
             overflow-x: hidden;
             .bus-content{
+                padding-top:200px;
                 position: relative;
                 width:100%;
-                height:610px;
                 display:flex;
                 align-items: flex-end;
+                &:first-child{
+                    padding-top:100px;
+                    .bus-feature-group{
+                        .txt{
+                            top:260px;
+                        }
+                    }
+                }
                 .bus-feature-group{
+                    width:100%;
+                    height:610px;
                     .txt{
                         position: absolute;
-                        top:160px;
-                        left:30px;
+                        top:360px;
+                        left:25px;
                         padding:45px 0;
-                        width:90%;
+                        width:88%;
                         background-color: $color-01;
                         z-index:-1;
                     }
                     .feature{
                         margin-left:65px;
-                        width:80%;
-                        flex-direction: row;
+                        width:85%;
                         justify-content:flex-start;
                         .feature-item{
                             width:32%;
                             font-weight: 600;
+                            font-size: 16px;
                             ul{
                                 display:block;
                                 padding-left:40px;
-                                font-size: 14px;
                                 font-weight: 400;
                                 li{
+                                    margin-left:0;
                                     list-style-type: square;
                                 }
                             }
                         }
                     }
 
+                    .place{
+                        flex-direction: row;
+                        .feature-item{
+                            width:35%;
+
+                            &:first-child{
+                                width:27.5%;
+                            }
+                        }
+                        
+                    }
+                    .service{
+                        width:80%;
+                    }
                     .service,
                     .citybus,
                     .qna{
@@ -218,13 +428,14 @@
                         .feature-item{
                             width:100%;
                             ul{
-                                padding-left:10px;
+                                padding-left:8px;
                                 display:flex;
                                 align-items: center;
                                 flex-wrap: wrap;
                                 gap:0;
                                 li{
-                                    margin-left:30px;
+                                    margin-left:15px;
+                                    margin-right:10px;
                                 }
                             }
                         }

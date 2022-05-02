@@ -29,8 +29,15 @@
 #special04{
     background-image: url(../images/img_special04.jpg);
 }
-@media screen and (min-width:1025px){
-    .bus-content{
+
+// .bus-feature-group{
+//     background-image: url(../images/bus_station_blue.svg);
+//     background-repeat:no-repeat;
+//     background-size:cover;
+// }
+
+@media screen and (min-width:744px){
+    .bus-feature-group{
         background-image: url(../images/bus_station_blue.svg);
         background-repeat:no-repeat;
         background-size:cover;
