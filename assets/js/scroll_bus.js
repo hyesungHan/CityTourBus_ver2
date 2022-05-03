@@ -9,6 +9,7 @@ if (scrollArea >= 744) {
     });
 } else {
     $('.bus-content').show();
+
 }
 
 
@@ -32,6 +33,7 @@ let href = $(this).attr('href');
 $('.bus-middle-box a').click(function(){
     console.log($(href).offset().top);
 })
+
 
 $(window).scroll(function(){
     let stNum = $(this).scrollTop();

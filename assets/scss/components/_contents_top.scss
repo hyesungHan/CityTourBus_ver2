@@ -1,4 +1,5 @@
 .contents-top{
+    padding-top:50px;
     min-width: 320px;
     margin-bottom:30px;
     
@@ -77,6 +78,7 @@
 
 @media screen and (min-width:744px) and (max-width:1024px){
     .contents-top{
+        padding-top:0;
         .slider-area{
             position: relative;
             margin-left:10%;
@@ -174,6 +176,7 @@
 }
 @media screen and (min-width:1025px){
     .contents-top{
+        padding-top:0;
         max-width: 1250px;
         margin:auto;
         .slider-area{

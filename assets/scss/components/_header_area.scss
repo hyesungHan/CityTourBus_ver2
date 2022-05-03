@@ -1,7 +1,10 @@
 .header-area{
+    position:fixed;
+    width:100%;
     min-width: 320px;
     height:50px;
     background-color: $color-05;
+    z-index:10;
     .logo-group{
         float:left;
         padding:5px;
@@ -84,6 +87,7 @@
 
 @media screen and (min-width:744px) and (max-width:1024px){
     .header-area{
+        position:static;
         display:flex;
         justify-content:space-between;
         align-items: normal;
@@ -140,6 +144,7 @@
         background-color: $color-05;
     }
     .header-area{
+        position:static;
         max-width: 1250px;
         margin:auto;
         display:flex;

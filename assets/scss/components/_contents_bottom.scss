@@ -1,13 +1,12 @@
 .contents-bottom{
     .bus-group{
         position:sticky;
-        top:0;
-        // height:70px;
-        background-color: white;
+        top:50px;
         .bus-outline{
             .bus-top-box{
                 .title{
                     text-align: center;
+                    font-size:0;
                     font-weight: 600;
                 }
             }
@@ -17,10 +16,35 @@
                     flex-wrap:wrap;
                     justify-content: center;
                     align-items: center;
+                    color:$color-01;
+                    background-color: $color-05;
+                    
                     .feature-item{
-                        font-size: 12px;
-                        &:nth-child(2n+1){
-                            margin-right:25px;
+                        padding:5px 0;
+                        width:50%;
+                        font-size: 14px;
+                        opacity:0.6;
+
+                        &.is-active{
+                            font-weight: 700;
+                            opacity:1;
+                            background-color:$color-02;
+                            color:$color-05;
+                        }
+
+                        .input-radio{
+                            position: absolute;
+                            
+                            &:checked{
+                                & + .label{
+                                    // background-color: $color-02;
+                                }
+                            }
+                        }
+                        .label{
+                            display:block;
+                            line-height:25px;
+                            text-align: center;
                         }
                     }
                     label{
@@ -36,28 +60,40 @@
     }
     .bus-stop-group{
         .bus-content{
+            padding:130px 3px 30px;
+            &:first-child{
+                padding-top:30px;
+            }
+
             .bus-feature-group{
-                width:100%;
+                margin:auto;
+                width:95%;
 
                 .txt{
-
+                    border:1px solid;
                 }
                 .feature{
                     display:flex;
                     flex-direction: column;
                     .feature-item{
-                        font-size: 12px;
+                        margin-left:5px;
+                        margin-bottom:10px;
+                        font-size: 14px;
                         font-weight: 600;
                         
                         &.is-active{
                             font-weight: 700;
                             opacity:1;
                         }
-
+                        &:last-child{
+                            margin-bottom:0;
+                        }
                         ul{
                             font-weight: 400;
                             li{
-                                margin-left:5px;
+                                margin-left:40px;
+                                word-break:keep-all;
+                                list-style: disc;
                             }
                         }
                     }
@@ -69,11 +105,18 @@
                         ul{
                             display:flex;
                             flex-wrap: wrap;
+                            li{
+                                margin-left:15px;
+                                list-style: none;
+                            }
                         }
                     }
                 }
 
             }           
+        }
+        img{
+            width:100%;
         }
     }
 }
@@ -101,13 +144,14 @@
                         align-items:flex-start;
                         gap:25px;
                         width:500px;
+                        background-color: transparent;
                         &::before{
                             content:'';
                             position: absolute;
-                            top:-3px;
+                            top:2px;
                             display:block;
                             width:600px;
-                            height:48px;
+                            height:58px;
                             background-color: white;
                             border:26px solid gray;
                             border-radius: 45px 30px;
@@ -125,9 +169,34 @@
                             z-index:-2;
                         }
                         .feature-item{
+                            width:45%;
                             font-size: 18px;
+                            opacity:1;
+                            color:$color-05;
 
+                            &.is-active{
+                                font-weight: 400;
+                                opacity:1;
+                                background-color: transparent;
+                            }
+
+                            .input-radio{
+                                position: static;
+                                & + .label .label-icon{
+                                    border-radius:100%;
+                                }
+                                &:checked + .label{
+                                    font-weight:700;
+                                }
+                                &:checked + .label .label-icon{
+                                    background-color:$color-04;
+                                    border: none;
+                                }
+                            }
                             .label{
+                                line-height:25px;
+                                background-color: transparent;
+                                text-align: center;
                                 margin-left:15px;
                                 display:flex;
                                 flex-direction:column-reverse;
@@ -146,18 +215,6 @@
                                 }
                             }
 
-                            .input-radio{
-                                & + .label .label-icon{
-                                  border-radius:100%;
-                                }
-                                &:checked + .label{
-                                  font-weight:700;
-                                }
-                                &:checked + .label .label-icon{
-                                  background-color:$color-04;
-                                  border: none;
-                                }
-                            }
                             
                         }
                     }
@@ -198,7 +255,11 @@
         }
         .bus-stop-group{
             .bus-content{
+                padding:0;
                 display:none;
+                &:first-child{
+                    padding:0;
+                }
                 &:nth-child(1){
                     display:block;
                 }
@@ -215,6 +276,7 @@
                         top:200px;
                         left:130px;
                         width:500px;
+                        border:none;
                     }
                     .feature{
 
@@ -230,6 +292,9 @@
                         }
                     }
                 }
+            }
+            img{
+                display:none;
             }
         }
     }
@@ -266,7 +331,6 @@
                     display:block;
                     width:30%;
                     height:60px;
-                    // border: 1px solid black;
                     background: linear-gradient($color-01 35%, $color-04 35%);
                     border-radius:20px;
                     transform:translateX(-50%);
@@ -300,15 +364,35 @@
                     .feature-list{
                         display:flex;
                         flex-direction: column;
-                        align-items: baseline;
-                        gap:10px;
+                        align-items: flex-start;
+                        gap:0px;
+                        color:$color-05;
+                        background-color:transparent;
                         .feature-item{
+                            width:100%;
                             font-size: 18px;
                             opacity:0.6;
 
                             &.is-active{
-                                font-weight: 700;
-                                opacity:1;
+                                // font-weight: 700;
+                                // opacity:1;
+                                background-color: transparent;
+                            }
+
+                            .input-radio{
+                                position: static;
+                                
+                                &:checked{
+                                    & + .label{
+                                        font-weight:inherit;
+                                    }
+                                }
+                            }
+                            .label{
+                                display:block;
+                                line-height:25px;
+                                background-color: transparent;
+                                text-align: left;
                             }
                         }
                     }
@@ -379,14 +463,15 @@
                     .txt{
                         position: absolute;
                         top:360px;
-                        left:25px;
+                        left:32px;
                         padding:45px 0;
                         width:88%;
                         background-color: $color-01;
                         z-index:-1;
+                        border:none;
                     }
                     .feature{
-                        margin-left:65px;
+                        margin-left:60px;
                         width:85%;
                         justify-content:flex-start;
                         .feature-item{
@@ -395,7 +480,7 @@
                             font-size: 16px;
                             ul{
                                 display:block;
-                                padding-left:40px;
+                                padding-left:30px;
                                 font-weight: 400;
                                 li{
                                     margin-left:0;
@@ -422,7 +507,7 @@
                     .service,
                     .citybus,
                     .qna{
-                        margin-left:80px;
+                        margin-left:70px;
                         flex-direction:column;
                         gap:30px;
                         .feature-item{
@@ -441,6 +526,9 @@
                         }
                     }
                 }
+            }
+            img{
+                display:none;
             }
         }
     }
