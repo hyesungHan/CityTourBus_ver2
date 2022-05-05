@@ -1,7 +1,9 @@
 .contents-bottom{
+    margin-bottom:150px;
     .bus-group{
         position:sticky;
         top:50px;
+        z-index:1;
         .bus-outline{
             .bus-top-box{
                 .title{
@@ -59,18 +61,19 @@
         }
     }
     .bus-stop-group{
+        display:flex;
+        flex-direction: column;
+        gap:50px;
         .bus-content{
-            padding:130px 3px 30px;
-            &:first-child{
-                padding-top:30px;
-            }
-
+            height:50vh;
             .bus-feature-group{
+                padding:5px;
                 margin:auto;
                 width:95%;
-
+                transform:translateY(130px);
                 .txt{
-                    border:1px solid;
+                    padding:10px;
+                    border:1px dashed;
                 }
                 .feature{
                     display:flex;
@@ -78,7 +81,7 @@
                     .feature-item{
                         margin-left:5px;
                         margin-bottom:10px;
-                        font-size: 14px;
+                        font-size: 12px;
                         font-weight: 600;
                         
                         &.is-active{
@@ -162,7 +165,7 @@
                             position:absolute;
                             top:40%;
                             display:block;
-                            width:740px;
+                            width:720px;
                             height:26px;
                             background-color: gray;
                             transform:translateY(-50%);
@@ -257,6 +260,7 @@
             .bus-content{
                 padding:0;
                 display:none;
+                height:auto;
                 &:first-child{
                     padding:0;
                 }
@@ -270,7 +274,7 @@
                     margin:auto;
                     position: relative;
                     max-width:740px;
-                    height:750px;
+                    height:720px;
                     .txt{
                         position:absolute;
                         top:200px;
@@ -442,11 +446,11 @@
             display:flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden;
             .bus-content{
                 padding-top:200px;
                 position: relative;
                 width:100%;
+                height:auto;
                 display:flex;
                 align-items: flex-end;
                 &:first-child{
@@ -458,8 +462,10 @@
                     }
                 }
                 .bus-feature-group{
+                    padding:0;
                     width:100%;
                     height:610px;
+                    transform:none;
                     .txt{
                         position: absolute;
                         top:360px;

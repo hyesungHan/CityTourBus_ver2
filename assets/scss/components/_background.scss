@@ -1,3 +1,14 @@
+.img-group{
+    .s-img{
+        background-image: url(../images/slider_img1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 15%;
+        // &:last-child{
+        //     background-image: url(../images/slider_img2.jpg);
+        // }
+    }
+}
 .image-item{
     background-repeat: no-repeat;
     background-size: cover;
@@ -30,16 +41,45 @@
     background-image: url(../images/img_special04.jpg);
 }
 
-// .bus-feature-group{
-//     background-image: url(../images/bus_station_blue.svg);
-//     background-repeat:no-repeat;
-//     background-size:cover;
-// }
+@media screen and (max-width:743px) {
+    .bus-content{
+        background-repeat:no-repeat;
+        background-size:cover;
+    }
+    #feature1{
+        background-image: url(../images/img-palace_w.jpg);
+        background-position:15%;
+    }
+    #feature2{
+        background-image: url(../images/img-audio_w.jpg);
+        background-position:bottom center;
+    }
+    #feature3{
+        background-image: url(../images/img-hitecker_w.jpg);
+        background-position:15%;
+    }
+    #feature4{
+        background-image: url(../images/img-trolly_w.jpg);
+        background-position:center center;
+    }
+    .bus-feature-group{
+        background-color: $color-01-01;
+    }
+}
 
 @media screen and (min-width:744px){
+    .bus-content{
+        background-image: none;
+    }
     .bus-feature-group{
         background-image: url(../images/bus_station_blue.svg);
         background-repeat:no-repeat;
         background-size:cover;
+    }
+
+    .img-group{
+        .s-img{
+            background-position: 0;
+        }
     }
 }
