@@ -28,7 +28,7 @@
             width:50px;
             height:50px;
             cursor: pointer;
-    
+            
             &::before,
             &::after{
                 content:'';
@@ -40,6 +40,7 @@
                 height:3px;
                 background-color: $color-01;
                 border-radius: 3px;
+                transition:0.5s;
             }
             &::after{
                 top:60%;
@@ -51,11 +52,26 @@
                     background-color: $color-03;
                 }
             }
+
+            &.is-open{
+                &::before{
+                    top:50%;
+                    transform:rotate(45deg);
+                    transition:0.5s;
+                }
+                &::after{
+                    top:50%;
+                    transform:rotate(-45deg);
+                    transition:0.5s;
+                }
+            }
         }
     }
     .menu-group{
         position: relative;
         top:50px;
+        display:none;
+        transition:0.5s;
         z-index: 10;
         .menu-list{
             position: absolute;
@@ -71,16 +87,21 @@
                 height: 30px;
                 line-height: 30px;
                 font-size: 16px;
+                font-weight: 600;
                 a{
                     color:$color-01;
                 }
 
                 &:hover{
                     a{
-                        color:$color-03;
+                        color:$color-04;
                     }
                 }
             }
+        }
+        &.is-open{
+            display:block;
+            transition:0.5s;
         }
     }
 }
@@ -120,6 +141,7 @@
             display:block;
             width:35%;
             min-width:300px;
+            transition:none;
 
             .menu-list{
                 position: static;
@@ -130,6 +152,7 @@
                 .menu-item{
                     font-size: 20px;
                     text-align: center;
+                    font-weight: 400;
                     a{
                         display:inline-block;
                         line-height:80px;
@@ -182,7 +205,7 @@
             display:block;
             width:35%;
             max-width:500px;
-
+            transition:none;
             .menu-list{
                 position: static;
                 flex-direction: row;
@@ -190,6 +213,7 @@
                 .menu-item{
                     font-size: 24px;
                     text-align: center;
+                    font-weight: 400;
                     a{
                         display:inline-block;
                         line-height:100px;

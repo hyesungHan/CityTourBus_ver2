@@ -1,5 +1,6 @@
 .contents-bottom{
-    margin-bottom:150px;
+    // margin-bottom:150px;
+    min-width: 320px;
     .bus-group{
         position:sticky;
         top:50px;
@@ -63,14 +64,14 @@
     .bus-stop-group{
         display:flex;
         flex-direction: column;
-        gap:50px;
+        // gap:50px;
         .bus-content{
-            height:50vh;
+            height:450px;
             .bus-feature-group{
                 padding:5px;
                 margin:auto;
                 width:95%;
-                transform:translateY(130px);
+                transform:translateY(150px);
                 .txt{
                     padding:10px;
                     border:1px dashed;
@@ -257,6 +258,7 @@
             }
         }
         .bus-stop-group{
+            display:block;
             .bus-content{
                 padding:0;
                 display:none;
@@ -275,6 +277,7 @@
                     position: relative;
                     max-width:740px;
                     height:720px;
+                    transform: translateY(0);
                     .txt{
                         position:absolute;
                         top:200px;
@@ -446,6 +449,7 @@
             display:flex;
             flex-direction: column;
             align-items: center;
+
             .bus-content{
                 padding-top:200px;
                 position: relative;

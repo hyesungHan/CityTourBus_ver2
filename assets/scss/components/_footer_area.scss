@@ -3,23 +3,23 @@
     background-color: $color-04;
     
     .info-area{
-        height:320px;
+        height:500px;
         display:flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         color:$color-01;
+        gap:7px;
 
         img{
             width:130px;
         }
         .name{
-            margin:3px 0;
             font-size: 18px;
         }
         .address{
-            margin-bottom:10px;
+            margin-bottom:5px;
             font-size: 12px;
         }
 
@@ -28,13 +28,14 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap:10px;
             
             a{
                 display:inline-block;
                 width:200px;
                 height:35px;
                 line-height:35px;
-                font-size: 16px;
+                font-size: 14px;
                 color:$color-01;
                 border:1px solid $color-01;
                 border-radius: 18px;
@@ -49,12 +50,11 @@
             }
             .scroll-top{
                 position: relative;
-                margin-bottom: 3px;
                 &::after{
                     content:'';
                     position: absolute;
                     top:15px;
-                    right:70px;
+                    right:65px;
                     display:inline-block;
                     width:10px;
                     height:10px;

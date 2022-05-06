@@ -1,10 +1,10 @@
 .contents-top{
     padding-top:50px;
     min-width: 320px;
-    margin-bottom:30px;
+    margin-bottom:100px;
     
     .slider-area{
-        border-radius:0 0 20px 20px;
+        border-radius:0 0 10px 10px;
         overflow: hidden;
 
         .img-group{
@@ -14,7 +14,7 @@
             .s-img{
                 flex-shrink: 0;
                 width:100%;
-                height:300px;
+                height:250px;
             }
         }
     }
@@ -50,16 +50,20 @@
         text-align: center;
         .title{
             margin-bottom:30px;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 600;
             .br{
                 display:block;
             }
         }
         .desc{
-            font-size: 16px;
+            margin:auto;
+            width:80%;
+            font-size: 14px;
+            line-height:1.5;
+            word-break:keep-all;
             &:nth-child(3){
-                margin:20px 0 20px;
+                padding:20px 0 20px;
             }
             .br{
                 display:block;
@@ -90,23 +94,28 @@
         }
 
         .news-area{
-            margin-bottom:30px;
+            position: relative;
+            margin-bottom:200px;
             .news-icon{
                 display:none;
             }
             .news-group{
-                margin-left:20%;
+                position: absolute;
+                right:0;
+                bottom:-80px;
                 padding:15px;
                 display:block;
-                width:80%;
+                width:75%;
+                max-width:650px;
                 background-color: $color-01;
-                border-radius: 30px 0 0 30px;
-                transform: translateY(-50px);
+                border-radius: 20px 0 0 20px;
+
                 .title{
                     font-size: 22px;
                 }
                 .info-group{
-                    padding-left:7px;
+                    padding-left:20px;
+                    width:95%;
                     display:flex;
                     justify-content: space-between;
                     align-items: center;
@@ -120,18 +129,33 @@
                     }
                     .btn-more{
                         a{
-                            display:inline-block;
-                            width:80px;
+                            position: relative;
+                            display:block;
+                            width:40px;
                             height:40px;
-                            line-height:40px;
-                            text-align: center;
-                            border-radius:19px;
+                            border-radius:100%;
                             background-color: $color-02;
+
+                            &::before{
+                                position: absolute;
+                                top:11px;
+                                left:8px;
+                                content:'';
+                                display:block;
+                                width:15px;
+                                height:15px;
+                                border-top:2px solid $color-05;
+                                border-right:2px solid $color-05;
+                                transform:rotate(45deg) ;
+                            }
                         }
                         &:hover{
                             a{
-                                color:$color-01;
                                 background-color: $color-05;
+                                &::before{
+                                    border-top:2px solid $color-02;
+                                    border-right:2px solid $color-02;
+                                }
                             }
                         }
                     }
@@ -153,14 +177,12 @@
                 }
             }
             .desc{
-                font-size: 22px;
+                font-size: 18px;
+                line-height:2;
                 &:nth-child(2){
                     .br{
                         display:inline;
                     }
-                }
-                &:nth-child(3){
-                    margin:30px 0;
                 }
                 &:last-child{
                     .br{
@@ -191,17 +213,16 @@
 
         .news-area{
             position: relative;
-            margin-bottom: 150px;
+            margin-bottom: 250px;
             .news-icon{
                 display:none;
             }
             .news-group{
                 position: absolute;
                 right:0;
-                bottom:-60px;
-                display:block;
-                margin-left:25%;
+                bottom:-110px;
                 padding:20px;
+                display:block;
                 width:75%;
                 max-width:800px;
                 background-color: $color-01;
@@ -212,6 +233,7 @@
                 }
                 .info-group{
                     padding-left:12px;
+                    width:95%;
                     display:flex;
                     justify-content: space-between;
                     align-items: center;
@@ -220,23 +242,38 @@
                             font-size: 20px;
                         }
                         .txt{
-                            font-size: 16px;
+                            font-size: 18px;
                         }
                     }
                     .btn-more{
                         a{
-                            display:inline-block;
-                            width:80px;
-                            height:40px;
-                            line-height:40px;
-                            text-align: center;
-                            border-radius:19px;
+                            position: relative;
+                            display:block;
+                            width:60px;
+                            height:60px;
+                            border-radius:100%;
                             background-color: $color-02;
+                            &::before{
+                                position: absolute;
+                                top:15px;
+                                left:10px;
+                                content:'';
+                                display:block;
+                                width:25px;
+                                height:25px;
+                                border-top:3px solid $color-05;
+                                border-right:3px solid $color-05;
+                                transform:rotate(45deg);
+                            }
+
                         }
                         &:hover{
                             a{
-                                color:$color-01;
                                 background-color: $color-05;
+                                &::before{
+                                    border-top:3px solid $color-02;
+                                    border-right:3px solid $color-02;
+                                }
                             }
                         }
                     }
@@ -259,13 +296,11 @@
             }
             .desc{
                 font-size: 26px;
+                line-height:2;
                 &:nth-child(2){
                     .br{
                         display:inline;
                     }
-                }
-                &:nth-child(3){
-                    margin:50px 0;
                 }
                 &:last-child{
                     .br{

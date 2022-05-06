@@ -52,7 +52,7 @@ $(window).on('resize', function (){
             $('.bus-content').eq(myBusStop).show();
         });
     } else {
-        location.reload();
+
     };
 })
 
