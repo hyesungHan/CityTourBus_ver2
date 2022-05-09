@@ -1,10 +1,10 @@
 .header-area{
-    position:fixed;
+    position:absolute;
     width:100%;
     min-width: 320px;
     height:50px;
-    background-color: $color-05;
-    z-index:10;
+    background-color: rgba(#2E200D, .3);
+    z-index:5;
     .logo-group{
         float:left;
         padding:5px;
@@ -34,7 +34,7 @@
                 content:'';
                 position: absolute;
                 top:40%;
-                right:5px;
+                right:7px;
                 display:block;
                 width:60%;
                 height:3px;
@@ -91,10 +91,9 @@
                 a{
                     color:$color-01;
                 }
-
                 &:hover{
                     a{
-                        color:$color-04;
+                        color:$color-03;
                     }
                 }
             }
@@ -108,13 +107,15 @@
 
 @media screen and (min-width:744px) and (max-width:1024px){
     .header-area{
-        position:static;
+        // position:static;
         display:flex;
         justify-content:space-between;
-        align-items: normal;
+        // align-items: normal;
         height:80px;
-
+        // background-color: rgba(#2E200D, .3);
+        background-color: transparent;
         .logo-group{
+            position: relative;
             display:flex;
             flex-direction: column;
             justify-content: center;
@@ -122,9 +123,19 @@
             gap:5px;
             width:155px;
             height:160px;
-            background-color: $color-05;
-            border-radius:0 0 35px 35px;
+            background-color: rgba(#2E200D, .4);
+            border-radius:5px;
+            z-index:1;
 
+            &::before{
+                content:'';
+                position: absolute;
+                top:80px;
+                width:100%;
+                height:80px;
+                // background-color: rgba(#2E200D, .3);
+                z-index:-1;
+            }
             .img-logo{
                 width:90%;
             }
@@ -141,7 +152,9 @@
             display:block;
             width:35%;
             min-width:300px;
-            transition:none;
+            transition:none;    
+            margin-right: 10px;
+
 
             .menu-list{
                 position: static;
@@ -150,12 +163,17 @@
                 gap:15px;
 
                 .menu-item{
-                    font-size: 20px;
+                    font-size: 18px;
                     text-align: center;
-                    font-weight: 400;
+                    font-weight: 600;
                     a{
                         display:inline-block;
                         line-height:80px;
+                    }
+                    &:hover{
+                        a{
+                            color:$color-03;
+                        }
                     }
                 }
             }
@@ -217,6 +235,11 @@
                     a{
                         display:inline-block;
                         line-height:100px;
+                    }
+                    &:hover{
+                        a{
+                            color:$color-03;
+                        }
                     }
                 }
             }

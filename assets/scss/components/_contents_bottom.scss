@@ -3,7 +3,8 @@
     min-width: 320px;
     .bus-group{
         position:sticky;
-        top:50px;
+        // top:50px;
+        top:0px;
         z-index:1;
         .bus-outline{
             .bus-top-box{

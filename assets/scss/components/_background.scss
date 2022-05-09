@@ -1,14 +1,20 @@
 .img-group{
     .s-img{
-        background-image: url(../images/slider_img1.jpg);
+        background-image: url(../images/top_img2.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 15%;
-        // &:last-child{
-        //     background-image: url(../images/slider_img2.jpg);
-        // }
+        background-position: top center;
+        animation-name: move;
+        animation-duration: 25s;
+        animation-timing-function: ease;
+        animation-iteration-count: infinite;
     }
 }
+@keyframes move {
+    50% { background-position: 80%};
+    100% { background-position: top center};
+}
+
 .image-item{
     background-repeat: no-repeat;
     background-size: cover;

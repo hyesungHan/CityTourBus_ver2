@@ -21,7 +21,7 @@
             .title{
                 position: absolute;
                 top:-25px;
-                font-size: 30px;
+                font-size: 34px;
                 font-weight: 600;
                 &::before{
                     position: absolute;
@@ -37,14 +37,14 @@
                         right:5px;
                         &::before{
                             content:'Seoul';
-                            left:-125px;
+                            left:-120px;
                         }
                     }
                     &.special{
                         left:5px;
                         &::before{
                             content:'Special';
-                            right:-150px;
+                            right:-135px;
                         }
                     }
                 }

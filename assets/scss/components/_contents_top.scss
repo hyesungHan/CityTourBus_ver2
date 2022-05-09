@@ -1,33 +1,70 @@
 .contents-top{
-    padding-top:50px;
+    // padding-top:50px;
     min-width: 320px;
     margin-bottom:100px;
     
     .slider-area{
-        border-radius:0 0 10px 10px;
+        // border-radius:0 0 10px 10px;
         overflow: hidden;
 
         .img-group{
-            display:flex;
-            align-items: center;
-            overflow-x: auto;
+            // display:flex;
+            // align-items: center;
             .s-img{
+                position: relative;
                 flex-shrink: 0;
                 width:100%;
-                height:250px;
+                height:370px;
+
+                &::before{
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    right:0;
+                    content:'';
+                    display:block;
+                    width:100%;
+                    height:100%;
+                    // background-color: rgba(#D6B86C, .3);
+                    // background-color: rgba(#B72834, .25);
+                    background-color: rgba(#2E200D, .5);
+                }
+
+                .title{
+                    position: absolute;
+                    top:80px;
+                    left:5%;
+                    display:flex;
+                    flex-direction:column;
+                    color:$color-01;
+                    font-size: 20px;
+
+                    .bold{
+                        font-weight: 600;
+                    }
+                    .br{
+                        display:block;
+                    }
+                }
             }
         }
     }
 
     .news-area{
+        margin-bottom:100px;
+        position: relative;
         .news-icon{
-            margin:20px 5px;
+            position: absolute;
+            top:-50px;
+            left:15px;
             display:block;
             width:40px;
             height:40px;
             border-radius:100%;
             background-color: $color-05;
             text-align: center;
+            box-shadow: 0 0 7px black;
+            opacity:.9;
             cursor: pointer;
             img{
                 padding-top:3px;
@@ -35,18 +72,91 @@
             }
             &:hover{
                 background-color: $color-04;
+                opacity:.7;
             }
         }
         .news-group{
-            display:none;
+            position: absolute;
+            top:-80px;
+            left:65px;
+            padding:10px;
+            width:78%;
+            max-width:350px;
+            background-color: rgba(white, .83);
+            border-radius: 10px;
+            box-shadow: 0 0 6px black;
+            opacity:0;
+            transition:1s;
+            z-index:-1;
+            
+            &.is-open{
+                opacity: 1;
+                transition:1s;
+                z-index:1;
+            }
+
+            .title{
+                display:none;
+            }
+            .info-group{
+                margin:auto;
+                width:95%;
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                .text-group{
+                    .title{
+                        display:block;
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+                    .txt{
+                        font-size: 12px;
+                        word-break: keep-all;
+                    }
+                }
+                .btn-more{
+                    a{
+                        position: relative;
+                        display:block;
+                        width:25px;
+                        height:25px;
+                        border-radius:100%;
+                        background-color: $color-02;
+
+                        &::before{
+                            position: absolute;
+                            top:6px;
+                            left:4px;
+                            content:'';
+                            display:block;
+                            width:10px;
+                            height:10px;
+                            border-top:2px solid $color-05;
+                            border-right:2px solid $color-05;
+                            transform:rotate(45deg) ;
+                        }
+                    }
+                    &:hover{
+                        a{
+                            background-color: $color-05;
+                            &::before{
+                                border-top:2px solid $color-02;
+                                border-right:2px solid $color-02;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
     .text-area{
-        margin:0 auto 50px;
+        margin:0 auto 70px;
         padding:0 3px;
         min-width:320px;
         max-width:505px;
+        height:330px;
         text-align: center;
         .title{
             margin-bottom:30px;
@@ -79,25 +189,29 @@
 
 @media screen and (min-width:744px) and (max-width:1024px){
     .contents-top{
-        padding-top:0;
+        // padding-top:0;
         .slider-area{
-            position: relative;
-            margin-left:10%;
-            width:90%;
-            border-radius:0 0 0 75px;
-            z-index: -1;
+            // position: relative;
+            // margin-left:10%;
+            // width:90%;
+            border-radius:5px 5px 0 0;
             .img-group{
                 .s-img{
-                    height:400px;
+                    height:550px;
+
+                    .title{
+                        top:35%;
+                        left:8%;
+                        font-size: 26px;
+                    }
                 }
             }
         }
 
         .news-area{
-            position: relative;
-            margin-bottom:200px;
+            margin-bottom:150px;
             .news-icon{
-                display:none;
+                // display:none;
             }
             .news-group{
                 position: absolute;
