@@ -114,16 +114,19 @@
         height:80px;
         // background-color: rgba(#2E200D, .3);
         background-color: transparent;
+
         .logo-group{
             position: relative;
+            float:none;
             display:flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap:5px;
-            width:155px;
-            height:160px;
-            background-color: rgba(#2E200D, .4);
+            width:130px;
+            height:130px;
+            // background-color: rgba(#2E200D, .4);
+            background-color: rgba(#B72834, .2);
             border-radius:5px;
             z-index:1;
 
@@ -141,6 +144,7 @@
             }
             .title{
                 margin-left:0;
+                font-size: 14px;
             }
         }
         .bars{
@@ -149,11 +153,12 @@
 
         .menu-group{
             position: static;
+            float:none;
+            margin-right: 10px;
             display:block;
             width:35%;
             min-width:300px;
             transition:none;    
-            margin-right: 10px;
 
 
             .menu-list{
@@ -172,7 +177,7 @@
                     }
                     &:hover{
                         a{
-                            color:$color-03;
+                            color:$color-05;
                         }
                     }
                 }
@@ -181,18 +186,15 @@
     }
 }
 @media screen and (min-width:1025px){
-    header{
-        background-color: $color-05;
-    }
     .header-area{
-        position:static;
         max-width: 1250px;
-        margin:auto;
+        left:50%;
+        width:100%;
+        height:100px;
         display:flex;
         justify-content:space-between;
-        align-items: normal;
-        height:100px;
-
+        background-color: transparent;
+        transform:translateX(-50%);
         .logo-group{
             float:none;
             display:flex;
@@ -200,17 +202,18 @@
             justify-content: center;
             align-items: center;
             gap:5px;
-            width:235px;
-            height:200px;
-            background-color: $color-05;
-            border-radius:0 0 35px 35px;
+            width:180px;
+            height:180px;
+            background-color: rgba(#2E200D, .3);
+            border-radius:5px;
+            z-index:1;
 
             .img-logo{
                 width:90%;
             }
             .title{
                 margin-left:0;
-                font-size: 22px;
+                font-size: 20px;
             }
         }
         
@@ -220,25 +223,30 @@
         .menu-group{
             position: static;
             float:none;
+            margin-right: 10px;
             display:block;
             width:35%;
             max-width:500px;
             transition:none;
+
+
             .menu-list{
                 position: static;
                 flex-direction: row;
                 justify-content: space-between;
+                gap:15px;
+
                 .menu-item{
-                    font-size: 24px;
+                    font-size: 20px;
                     text-align: center;
-                    font-weight: 400;
+
                     a{
                         display:inline-block;
                         line-height:100px;
                     }
                     &:hover{
                         a{
-                            color:$color-03;
+                            color:$color-05;
                         }
                     }
                 }

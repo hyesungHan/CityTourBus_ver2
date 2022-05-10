@@ -73,7 +73,38 @@
     }
 }
 
-@media screen and (min-width:744px){
+@media screen and (min-width:744px) and (max-width:1024px){
+    .bg-img{
+        background-repeat:no-repeat;
+        background-size:cover;
+        // background-position:bottom center;
+    }
+    #feature1{
+        .bg-img{
+            background-image: url(../images/img-palace_w.jpg);
+        }
+    }
+    #feature2{
+        .bg-img{
+            background-image: url(../images/img-audio_w.jpg);
+            background-position: 25% 65%;
+        }
+    }
+    #feature3{
+        .bg-img{
+            background-image: url(../images/img-hitecker_w.jpg);
+            background-position: 25% 65%;
+        }
+    }
+    #feature4{
+        .bg-img{
+            background-image: url(../images/img-trolly_w.jpg);
+            background-position: 25% 65%;
+        }
+    }
+}
+
+@media screen and (min-width:1025px){
     .bus-content{
         background-image: none;
     }
@@ -83,9 +114,4 @@
         background-size:cover;
     }
 
-    .img-group{
-        .s-img{
-            background-position: 0;
-        }
-    }
 }
