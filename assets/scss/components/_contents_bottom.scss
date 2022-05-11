@@ -20,8 +20,8 @@
                     flex-wrap:wrap;
                     justify-content: center;
                     align-items: center;
-                    color:$color-01;
-                    background-color: $color-05;
+                    color:$color-07;
+                    background-color: $color-08;
                     
                     .feature-item{
                         padding:5px 0;
@@ -32,8 +32,8 @@
                         &.is-active{
                             font-weight: 700;
                             opacity:1;
-                            background-color:$color-02;
-                            color:$color-05;
+                            background-color:$color-07-01;
+                            color:$color-08;
                         }
 
                         .input-radio{
@@ -47,8 +47,10 @@
                         }
                         .label{
                             display:block;
-                            line-height:25px;
+                            line-height:35px;
                             text-align: center;
+                            letter-spacing: 1px;
+                            font-family: 'NanumBarunGothic';
                         }
                     }
                     label{
@@ -79,7 +81,7 @@
                 display:block;
                 width:100%;
                 height:100%;
-                background-color: rgba(black, 0.2);
+                background-color: rgba(black, 0.1);
             }
 
             .bus-feature-group{
@@ -102,6 +104,8 @@
                         margin-bottom:10px;
                         font-size: 12px;
                         font-weight: 600;
+                        font-family: 'NanumBarunGothic';
+                        letter-spacing: 0.8px;
                         
                         &.is-active{
                             font-weight: 700;
@@ -116,6 +120,7 @@
                                 margin-left:40px;
                                 word-break:keep-all;
                                 list-style: disc;
+                                font-family: 'NanumBarunGothic';
                             }
                         }
                     }
@@ -144,6 +149,7 @@
 }
 @media screen and (min-width:744px) and (max-width:1024px){
     .contents-bottom{
+        margin-bottom:100px;
         display:flex;
         flex-direction: column;
         gap:30px;
@@ -154,6 +160,7 @@
                 padding:0;
                 .bus-top-box{
                     .title{
+                        display:none;
                         margin-bottom:20px;
                         font-size: 26px;
                     }
@@ -330,12 +337,15 @@
                     }
                     .feature{
                         .feature-item{
-                            font-size: 14px;                      
+                            margin-bottom:15px;
+                            font-size: 18px;                    
     
                             ul{
+                                padding-top:7px;
                                 font-weight: 400;
                                 li{
                                     margin-left:35px;
+                                    margin-bottom:7px;
                                 }
                             }
                         }
@@ -407,8 +417,11 @@
                     text-align: center;
                     background-color:white;
                     .title{
+                        padding:5px 0;
                         font-size: 26px;
                         font-weight: 600;
+                        font-family: 'NanumBarunGothic';
+                        letter-spacing: 2px;
                     }
                 }
                 .bus-middle-box{

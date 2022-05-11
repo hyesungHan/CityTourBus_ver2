@@ -105,6 +105,30 @@
 }
 
 @media screen and (min-width:1025px){
+    .contents-top{
+        .slider-area{
+            background-image: url(../images/top_img2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top center;
+            animation-name: move;
+            animation-duration: 25s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+    }
+    .img-group{
+        .s-img{
+            background-image: none;
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            // background-position: top center;
+            // animation-name: move;
+            // animation-duration: 25s;
+            // animation-timing-function: ease;
+            // animation-iteration-count: infinite;
+        }
+    }
     .bus-content{
         background-image: none;
     }

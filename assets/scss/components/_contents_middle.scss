@@ -18,18 +18,25 @@
         background-color: $color-03-01;
 
         .info-text-group{
+            font-family: 'NanumBarunGothic';
             .title{
                 position: absolute;
-                top:-25px;
-                font-size: 34px;
+                top:-40px;
+                font-size: 40px;
                 font-weight: 600;
+                color:$color-08-01;
+                letter-spacing: 5px;
+                font-family:'Happiness-Sans-Title';
+
                 &::before{
                     position: absolute;
-                    top:-25px;
+                    top:35px;
                     display:block;
-                    font-size: 50px;
+                    font-size: 54px;
+                    color:$color-09;
+                    font-family: 'MapoAgape';
                     font-style: italic;
-                    opacity:0.3;
+                    opacity:0.19;
                     z-index:-1;
                 }
                 @media screen and (max-width:743px){
@@ -37,20 +44,22 @@
                         right:5px;
                         &::before{
                             content:'Seoul';
-                            left:-120px;
+                            //left:-175px;
                         }
                     }
                     &.special{
                         left:5px;
                         &::before{
                             content:'Special';
-                            right:-135px;
+                            //right:-175px;
                         }
                     }
                 }
             }
             .desc{
+                color:$color-08;
                 font-size: 14px;
+                letter-spacing: 1px;
             }
             .price{
                 display:none;
@@ -58,6 +67,7 @@
         }
 
         .info-image-group{
+            padding-bottom: 10px;
             display:flex;
             flex-direction: column;
             justify-content: center;
@@ -78,6 +88,7 @@
                     height:15px;
                     border-radius: 100%;
                     background-color: $color-01-01;
+                    border:1px dotted  $color-05-01;
     
                     &.is-active{
                         background-color: $color-05;
@@ -103,7 +114,7 @@
                         text-align: left;
                         font-size: 14px;
                         font-weight: 600;
-                        color:$color-05;
+                        color:$color-08;
                         text-shadow: 0 0 3px $color-01,
                                      0 0 6px $color-01;
                         .number{
@@ -117,15 +128,20 @@
         }
 
         .btn-more{
-            margin:15px auto;
+            margin:auto;
+            width:100%;
+            // border:1px solid;
             .more{
+                padding:15px;
                 display:block;
-                width:100px;
-                height:35px;
-                line-height:35px;
+                letter-spacing: 2px;
                 font-weight: 600;
-                border-radius:17px;
-                background-color: $color-02;
+                font-family: 'NanumBarunGothic';
+                
+                &:hover{
+                    background-color: $color-03-01;
+                    transition:0.5s;
+                }
             }
         }
         &:last-child{
@@ -148,6 +164,7 @@
 @media screen and (min-width:744px) and (max-width:1024px) {
     .contents-middle{
         margin:0 auto 250px;
+        padding:0 5px;
         max-width: 900px;
         gap:180px;
         .program-area{
@@ -166,26 +183,25 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                width:40%;
-                background-color: $color-02;
+                width:35%;
+                background-color: $color-07;
                 border-radius: 7px 7px 0 0;
                 
                 &.left{
+                    bottom:-50px;
                     left:0;
-                    bottom:-80px;
                 }
                 &.right{
+                    bottom:-70px;
                     right:0;
-                    bottom:-99px;
                 }
 
                 .title{
                     position: absolute;
-                    top:-425px;
                     height:350px;
                     writing-mode: vertical-rl;
                     font-size: 54px;
-                    letter-spacing: 10px;
+                    letter-spacing: 2px;
                     &::before{
                         top:-75px;
                         font-size: 100px;
@@ -194,6 +210,7 @@
                         z-index:1;
                     }
                     &.seoul{
+                        top:-405px;
                         left:5px;
                         &::before{
                             content:'Seoul';
@@ -201,7 +218,7 @@
                         }
                     }
                     &.special{
-                        top:-400px;
+                        top:-380px;
                         right:5px;
                         &::before{
                             content:'Special';
@@ -222,8 +239,9 @@
                 }
                 .price{
                     display: block;
+                    color:$color-08;
                     margin-bottom: 10px;
-                    font-size: 20px;
+                    font-size: 18px;
                     table{
                         border-spacing:10px 5px;
                         th{
@@ -244,7 +262,7 @@
                 .image-index{
                     padding:0;
                     margin-left:180px;
-                    gap:20px;
+                    gap:35px;
         
                     .icon{
                         display:inline-block;
@@ -252,8 +270,11 @@
                         height:40px;
                         line-height:40px;
                         font-size: 40px;
-                        color:$color-02;
+                        font-family: 'MapoAgape';
+                        font-style:italic;
+                        color:$color-07;
                         background-color: transparent;
+                        border:none;
                         &.is-active{
                             font-weight: 600;
                             color:$color-05;
@@ -265,16 +286,16 @@
                 .image-list{
                     width:100%;
                     justify-content: flex-start;
-                    border-radius:30px;
+                    border-radius:20px;
                     .image-item{
                         flex-shrink: 0;
                         width:100%;
                         height:420px;
-                        background-color: gray;
                         .title{
                             margin-left:25px;
                             padding-top:10px;
                             font-size: 26px;
+                            font-family: 'Happiness-Sans-Title';
                             .number{
                                 display:inline;
                                 font-size: 30px;
@@ -287,23 +308,28 @@
             .btn-more{
                 position: absolute;
                 margin:0 auto;
-                width:40%;
+                width:35%;
                 &.left{
                     left:0;
-                    bottom:-124px;
+                    bottom:-95px;
                 }
                 &.right{
                     right:0;
-                    bottom:-144px;
+                    bottom:-115px;
                 }
                 .more{
                     display:block;
                     width:100%;
                     height:45px;
-                    line-height:45px;
+                    line-height:15px;
                     font-size: 18px;
                     border-radius: 0 0 7px 7px;
-                    background-color: $color-02;
+                    background-color: $color-07;
+
+                    &:hover{
+                        background-color: $color-10-01;
+                        transition:0.5s;
+                    }
                 }
             }
 
@@ -337,7 +363,6 @@
     
             .info-text-group{
                 position: static;
-                // top: -50px;
                 flex-direction: column-reverse;
                 justify-content: center;
                 align-items: center;
@@ -345,12 +370,12 @@
                 
                 .title{
                     position:static;
-                    font-size: 46px;
+                    font-size: 60px;
                     letter-spacing: 10px;
                 }
                 .desc{
                     margin-bottom:0;
-                    font-size: 18px;
+                    font-size: 20px;
                     letter-spacing: -0.5;
                     .br{
                         display:inline;
