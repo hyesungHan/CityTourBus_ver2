@@ -232,9 +232,6 @@
                                 align-items:flex-start;
                                 gap:5px;
                                 
-                                .label-txt{
-                                //   padding-right:8px;
-                                }
                                 .label-icon{
                                   display:inline-flex;
                                   flex-shrink:0;
@@ -311,7 +308,11 @@
                     // position: relative;
                     // width:60%;
                     // max-width:740px;
+                    max-width: 700px;
                     transform: translateY(0);
+                    background-color: white;
+                    border-radius:7px;
+                    box-shadow:0 0 3px $color-08-02;
                     .txt{
                         display:flex;
                         flex-direction:column;
@@ -320,8 +321,8 @@
                         border:none;
                         .bg-img{
                             display:block;
-                            width:90%;
-                            height:350px;
+                            width:100%;
+                            height:380px;
                             border-radius: 3px;
                         }
                         .feature{
@@ -329,8 +330,8 @@
                             // left:0;
                             // bottom:0;
                             padding:20px;
-                            width:90%;
-                            background-color: $color-01;
+                            width:100%;
+                            // background-color: $color-01;
                             border-radius: 3px;
                         }
 
@@ -372,14 +373,39 @@
 @media screen and (min-width:1025px) {
     .contents-bottom{
         position: relative;
-        padding:50px 0 60px;
+        padding:100px 0 60px;
         margin:auto;
-        max-width: 1400px;
+        max-width: 1200px;
         display:flex;
-        justify-content:center;
-        gap:6%;
-        // background: linear-gradient(90deg, darkgray 40.5%, white 40.5%);
+        justify-content:space-around;
+        background: linear-gradient(90deg, gray 37.5%, white 41%), 
+                    linear-gradient(90deg, gray .5%, white 0, white 3%, gray 0, gray 37.5%, white 41%),
+                    linear-gradient(90deg, gray 37.5%, white 41%), 
+                    linear-gradient(90deg, gray .5%, white 0, white 3%, gray 0, gray 37.5%, white 41%),
+                    linear-gradient(90deg, gray 37.5%, white 41%), 
+                    linear-gradient(90deg, gray .5%, white 0, white 3%, gray 0, gray 37.5%, white 41%),
+                    linear-gradient(90deg, gray 37.5%, white 41%), 
+                    linear-gradient(90deg, gray .5%, white 0, white 3%, gray 0, gray 37.5%, white 41%),
+                    linear-gradient(90deg, gray 37.5%, white 41%), 
+                    linear-gradient(90deg, gray .5%, white 0, white 3%, gray 0, gray 37.5%, white 41%),
+                    linear-gradient(90deg, gray 37.5%, white 41%), 
+                    linear-gradient(90deg, gray .5%, white 0, white 3%, gray 0, gray 37.5%, white 41%),
+                    linear-gradient(90deg, gray 37.5%, white 41%), 
+                    linear-gradient(90deg, gray .5%, white 0, white 3%, gray 0, gray 37.5%, white 41%),
+                    linear-gradient(90deg, gray 37.5%, white 41%);
+        background-size: 100% 7%, 100% 13%, 
+                    100% 20%, 100% 26%,
+                    100% 33%, 100% 39%, 
+                    100% 46%, 100% 52%, 
+                    100% 59%, 100% 65%,
+                    100% 72%, 100% 78%,
+                    100% 85%, 100% 91%,
+                    100% 100%; 
+        background-repeat:no-repeat; 
         z-index:-2;
+        box-shadow: inset 0 0 7px white,
+                    inset 0 0 7px white,
+                    inset 0 0 10px white;
         .bus-group{
             display:block;
             position:sticky;
@@ -416,11 +442,14 @@
                 .bus-top-box{
                     text-align: center;
                     background-color:white;
+                    box-shadow: inset 0 0 3px darkgray,
+                                inset 0 0 3px darkgray,
+                                inset 0 0 3px darkgray;
                     .title{
                         padding:5px 0;
                         font-size: 26px;
                         font-weight: 600;
-                        font-family: 'NanumBarunGothic';
+                        font-family: 'Happiness-Sans-Title';
                         letter-spacing: 2px;
                     }
                 }
@@ -433,6 +462,9 @@
                     align-items: center;
                     overflow:hidden;
                     background-color:white;
+                    box-shadow: inset 0 0 3px darkgray,
+                                inset 0 0 3px darkgray,
+                                inset 0 0 3px darkgray;
 
                     .feature-list{
                         display:flex;
@@ -510,56 +542,74 @@
         }
 
         .bus-stop-group{
-            width:60%;
-            max-width:600px;
+            width:55%;
             display:flex;
             flex-direction: column;
             align-items: center;
 
             .bus-content{
-                padding-top:200px;
                 position: relative;
                 width:100%;
                 height:auto;
                 display:flex;
                 align-items: flex-end;
-
+                
                 &::before{
                     display:none;
                 }
-
-                &:first-child{
-                    padding-top:100px;
-                    .bus-feature-group{
-                        .txt{
-                            top:260px;
-                        }
-                    }
+                
+                &:not(:first-child){
+                    padding-top:200px;
                 }
 
+
                 .bus-feature-group{
-                    padding:0;
-                    width:100%;
-                    height:610px;
+                    margin:auto;
+                    padding: 15px;
+                    // padding:0;
+                    // width:100%;
+                    // height:610px;
                     transform:none;
+                    background-color: white;
+                    border-radius:7px;
+                    box-shadow:0 0 10px  $color-08-02;
                     .txt{
-                        position: absolute;
-                        top:360px;
-                        left:32px;
-                        padding:45px 0;
-                        width:88%;
-                        background-color: $color-01;
-                        z-index:-1;
+                        // position: absolute;
+                        // top:360px;
+                        // left:32px;
+                        padding:0;
+                        // width:88%;
+                        // background-color: $color-01;
+                        // z-index:-1;
+                        display:flex;
+                        flex-direction:column;
+                        align-items: center;
+                        gap:10px;
                         border:none;
+                        .bg-img{
+                            display:block;
+                            width:100%;
+                            height:400px;
+                            border-radius: 5px;
+                        }
+                        .feature{
+                            // position: absolute;
+                            // left:0;
+                            // bottom:0;
+                            padding:20px;
+                            // background-color: $color-01-02;
+                            border-radius: 5px;
+                        }
                     }
                     .feature{
-                        margin-left:60px;
-                        width:85%;
+                        // margin-left:30px;
+                        width:100%;
                         justify-content:flex-start;
                         .feature-item{
                             width:32%;
                             font-weight: 600;
-                            font-size: 16px;
+                            font-size: 18px;
+                            line-height:1.5;
                             ul{
                                 display:block;
                                 padding-left:30px;
@@ -584,12 +634,18 @@
                         
                     }
                     .service{
-                        width:80%;
+                        .feature-item{
+                            ul{
+                                li{
+                                    list-style:none;
+                                }
+                            }
+                        }
                     }
                     .service,
                     .citybus,
                     .qna{
-                        margin-left:70px;
+                        // margin-left:30px;
                         flex-direction:column;
                         gap:30px;
                         .feature-item{
@@ -608,9 +664,6 @@
                         }
                     }
                 }
-            }
-            img{
-                display:none;
             }
         }
     }

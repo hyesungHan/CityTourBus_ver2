@@ -73,7 +73,8 @@
     }
 }
 
-@media screen and (min-width:744px) and (max-width:1024px){
+// @media screen and (min-width:744px) and (max-width:1024px)
+@media screen and (min-width:744px) {
     .bg-img{
         background-repeat:no-repeat;
         background-size:cover;
@@ -120,22 +121,15 @@
     .img-group{
         .s-img{
             background-image: none;
-            // background-repeat: no-repeat;
-            // background-size: cover;
-            // background-position: top center;
-            // animation-name: move;
-            // animation-duration: 25s;
-            // animation-timing-function: ease;
-            // animation-iteration-count: infinite;
         }
     }
     .bus-content{
-        background-image: none;
+        // background-image: none;
     }
-    .bus-feature-group{
-        background-image: url(../images/bus_station_blue.svg);
-        background-repeat:no-repeat;
-        background-size:cover;
-    }
+    // .bus-feature-group{
+    //     background-image: url(../images/bus_station_blue.svg);
+    //     background-repeat:no-repeat;
+    //     background-size:cover;
+    // }
 
 }
